@@ -57,30 +57,3 @@ def find_sources(vertices):
 			result.put(vertex)
 
 	return result
-
-A = Vertex('8A')
-B = Vertex('8B')
-C = Vertex('12')
-D = Vertex('15L')
-E = Vertex('30')
-
-B_pre = set()
-B_pre.add(A)
-C_pre = set()
-C_pre.add(A)
-C_pre.add(B)
-D_pre = set()
-D_pre.add(A)
-D_pre.add(B)
-E_pre = set()
-E_pre.add(C)
-E_pre.add(D)
-
-B.add_incoming(B_pre)
-C.add_incoming(C_pre)
-D.add_incoming(D_pre)
-E.add_incoming(E_pre)
-vertices = [A,B,C,D,E]
-ordering = top_Ordering(vertices)
-for vertex in ordering:
-	print(str(vertex.element)+" ")
